@@ -8,8 +8,15 @@ import {ref} from "vue";
 
 const modules = [Navigation]
 
-const id = ref(1)
+let imgID = 0
+const id = ref(0)
 const iterm = ref(true)
+const images = ref([
+  {url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsDetailsImg/airu/1.webp", title: "1", imgID: imgID++},
+  {url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsDetailsImg/airu/2.webp", title: "2", imgID: imgID++},
+  {url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsDetailsImg/airu/3.webp", title: "3", imgID: imgID++},
+  {url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsDetailsImg/airu/4.webp", title: "4", imgID: imgID++},
+])
 
 
 </script>
@@ -58,10 +65,6 @@ const iterm = ref(true)
     width: 45%;
 
     .bigImg {
-      ul {
-        list-style: none;
-      }
-
       img {
         width: 100%;
         height: 100%;
@@ -248,20 +251,7 @@ const iterm = ref(true)
   <div class="main">
     <div class="goodsImg">
       <div class="bigImg">
-        <ul>
-          <li v-if="id === 1">
-            <img alt="1" src="../../assets/images/goodsDetailsImg/airu/1.webp">
-          </li>
-          <li v-else-if="id === 2">
-            <img alt="2" src="../../assets/images/goodsDetailsImg/airu/2.webp">
-          </li>
-          <li v-else-if="id === 3">
-            <img alt="3" src="../../assets/images/goodsDetailsImg/airu/3.webp">
-          </li>
-          <li v-else-if="id === 4">
-            <img alt="4" src="../../assets/images/goodsDetailsImg/airu/4.webp">
-          </li>
-        </ul>
+        <img :src="images[id].url" alt="airu">
       </div>
       <div class="smallImg">
         <swiper
@@ -270,17 +260,8 @@ const iterm = ref(true)
             :navigation="true"
             :slides-per-view="3"
         >
-          <swiper-slide @click="id=1">
-            <img alt="1" src="../../assets/images/goodsDetailsImg/airu/1.webp">
-          </swiper-slide>
-          <swiper-slide @click="id=2">
-            <img alt="2" src="../../assets/images/goodsDetailsImg/airu/2.webp">
-          </swiper-slide>
-          <swiper-slide @click="id=3">
-            <img alt="3" src="../../assets/images/goodsDetailsImg/airu/3.webp">
-          </swiper-slide>
-          <swiper-slide @click="id=4">
-            <img alt="4" src="../../assets/images/goodsDetailsImg/airu/4.webp">
+          <swiper-slide v-for="image in images" :key="image.imgID" @click="id=image.imgID">
+            <img :alt="image.title" :src="image.url">
           </swiper-slide>
         </swiper>
       </div>
