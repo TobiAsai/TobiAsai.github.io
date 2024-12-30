@@ -8,8 +8,15 @@ import {ref} from "vue";
 
 const modules = [Navigation]
 
-const id = ref(1)
+let imgID = 0
+const id = ref(0)
 const iterm = ref(true)
+const images = ref([
+  {url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsDetailsImg/hyperBody/1.webp", title: "1", imgID: imgID++},
+  {url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsDetailsImg/hyperBody/2.webp", title: "2", imgID: imgID++},
+  {url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsDetailsImg/hyperBody/3.webp", title: "3", imgID: imgID++},
+  {url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsDetailsImg/hyperBody/4.webp", title: "4", imgID: imgID++},
+])
 
 </script>
 
@@ -55,9 +62,6 @@ const iterm = ref(true)
   .goodsImg {
     width: 45%;
     .bigImg {
-      ul {
-        list-style: none;
-      }
       img {
         width: 100%;
         height: 100%;
@@ -230,20 +234,7 @@ const iterm = ref(true)
   <div class="main">
     <div class="goodsImg">
       <div class="bigImg">
-        <ul>
-          <li v-if="id === 1">
-            <img src="../../assets/images/goodsDetailsImg/hyperBody/1.webp" alt="1">
-          </li>
-          <li v-else-if="id === 2">
-            <img src="../../assets/images/goodsDetailsImg/hyperBody/2.webp" alt="2">
-          </li>
-          <li v-else-if="id === 3">
-            <img src="../../assets/images/goodsDetailsImg/hyperBody/3.webp" alt="3">
-          </li>
-          <li v-else-if="id === 4">
-            <img src="../../assets/images/goodsDetailsImg/hyperBody/4.webp" alt="4">
-          </li>
-        </ul>
+        <img :src="images[id].url" alt="HyperBody">
       </div>
       <div class="smallImg">
         <swiper
@@ -252,17 +243,8 @@ const iterm = ref(true)
             :navigation="true"
             :slides-per-view="3"
         >
-          <swiper-slide @click="id=1">
-            <img src="../../assets/images/goodsDetailsImg/hyperBody/1.webp" alt="1">
-          </swiper-slide>
-          <swiper-slide @click="id=2">
-            <img src="../../assets/images/goodsDetailsImg/hyperBody/2.webp" alt="2">
-          </swiper-slide>
-          <swiper-slide @click="id=3">
-            <img src="../../assets/images/goodsDetailsImg/hyperBody/3.webp" alt="3">
-          </swiper-slide>
-          <swiper-slide @click="id=4">
-            <img src="../../assets/images/goodsDetailsImg/hyperBody/4.webp" alt="4">
+        <swiper-slide v-for="image in images" :key="image.imgID" @click="id=image.imgID">
+            <img :alt="image.title" :src="image.url">
           </swiper-slide>
         </swiper>
       </div>

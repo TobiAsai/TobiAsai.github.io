@@ -8,9 +8,155 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules"
 
 const modules = [Autoplay, Navigation, Pagination]
 
+let topImagesID = 0
+let brandsID = 0
+let goodsImagesID = 0
+
 const leftMenu = ref({
-  menu1: false, menu2:false
+  menu1: false, menu2: false
 })
+
+const firstLeftMenu = ref([
+  {
+    name: "🐈PVC現貨",
+    routerPath: "#",
+  },
+  {
+    name: "🐈海外代購現貨",
+    routerPath: "#",
+  },
+  {
+    name: "🐈PVC預購",
+    routerPath: "#",
+  },
+  {
+    name: "🐈吉伊卡哇",
+    routerPath: "#",
+  },
+  {
+    name: "🐈貓車福箱",
+    routerPath: "#",
+  },
+  {
+    name: "🐈GK現貨",
+    routerPath: "#",
+  },
+  {
+    name: "🐈貓車周年慶",
+    routerPath: "#",
+  },
+])
+
+const secondLeftMenu = ref([
+  {
+    name: "Hololive",
+    routerPath: "#",
+  },
+  {
+    name: "Nijisanji彩虹社",
+    routerPath: "#",
+  },
+  {
+    name: "香香妹子",
+    routerPath: "#",
+  },
+  {
+    name: "Lycoris 莉可麗絲",
+    routerPath: "#",
+  },
+  {
+    name: "OVERLORD",
+    routerPath: "#",
+  },
+  {
+    name: "火影忍者",
+    routerPath: "#",
+  },
+  {
+    name: "初音未來miku",
+    routerPath: "#",
+  },
+  {
+    name: "🐈福箱專區",
+    routerPath: "#",
+  },
+  {
+    name: "米哈遊",
+    routerPath: "#",
+  },
+])
+
+const topImages = ref([
+  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/topImg/1.jpeg?raw=true", title: "top1", topImagesID: topImagesID++},
+  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/topImg/2.jpg?raw=true", title: "top2", topImagesID: topImagesID++},
+])
+
+const brands = ref([
+  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/1.png?raw=true", title: "brand1", brandsID: brandsID++},
+  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/2.png?raw=true", title: "brand2", brandsID: brandsID++},
+  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/3.png?raw=true", title: "brand3", brandsID: brandsID++},
+  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/4.png?raw=true", title: "brand4", brandsID: brandsID++},
+  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/5.png?raw=true", title: "brand5", brandsID: brandsID++},
+])
+
+const goodsImages = ref([
+  {
+    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/airu.jpg?raw=true",
+    title: "airu", 
+    goodsImagesID: goodsImagesID++,
+    classification: "香香妹子",
+    routerPath: "/airu",
+    goodsName: "【PVC預購】1/7 天使警察 艾露‧弗拉提亞",
+    price: "$5000",
+    },
+  {
+    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/dusk.jpg?raw=true",
+    title: "dusk",
+    goodsImagesID: goodsImagesID++,
+    classification: "香香妹子",
+    routerPath: "/dusk",
+    goodsName: "【PVC預購】1/7 PVC人形 明日方舟 夕 Dusk",
+    price: "$8650",
+  },
+  {
+    url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsImg/hyperBody.webp",
+    title: "HyperBody",
+    goodsImagesID: goodsImagesID++,
+    classification: "香香妹子",
+    routerPath: "/hyperBody",
+    goodsName: "【PVC現貨】Hyper Body 神罰",
+    price: "$3090",
+  },
+  {
+    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/miku.jpg?raw=true",
+    title: "miku",
+    goodsImagesID: goodsImagesID++,
+    classification: "香香妹子",
+    routerPath: "/miku",
+    goodsName: "【PVC預購】1/8 PVC人形 RISE UP+系列 初音未來 Fantasia Witch Ver.",
+    price: "$1400",
+  },
+  {
+    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/noel.jpg?raw=true",
+    title: "noel",
+    goodsImagesID: goodsImagesID++,
+    classification: "Hololive",
+    routerPath: "/noel",
+    goodsName: "【PVC現貨】1/7 hololive 白銀諾艾爾",
+    price: "$5980",
+  },
+  {
+    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/rokixi.jpg?raw=true",
+    title: "rokixi",
+    goodsImagesID: goodsImagesID++,
+    classification: "香香妹子",
+    routerPath: "/rokixi",
+    goodsName: "【PVC現貨】1/7洛琪希·米格路迪亞",
+    price: "$4380",
+  },
+])
+
+
 
 </script>
 
@@ -98,7 +244,10 @@ const leftMenu = ref({
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 4px 4px;
-
+    a {
+    text-decoration: none;
+    color: inherit;
+    }
     li {
       list-style: none;
       display: flex;
@@ -123,7 +272,6 @@ const leftMenu = ref({
 }
 
 .rightImg {
-  //border: solid 2px black;
   margin-left: 15%;
   width: 80%;
   height: 100%;
@@ -140,7 +288,6 @@ const leftMenu = ref({
   }
 
   .commit {
-    //border: solid 2px black;
     width: 77.4%;
     margin-left: 10%;
     padding: 10px;
@@ -172,22 +319,12 @@ const leftMenu = ref({
         :pagination="{ clickable: true }"
         class="topImg"
     >
-    <swiper-slide><img src="../assets/images/topImg/1.jpeg" alt="1"/></swiper-slide>
-    <swiper-slide><img src="../assets/images/topImg/2.jpg" alt="2"/></swiper-slide>
+    <swiper-slide v-for="topImg in topImages" :key="topImg.topImagesID"><img :src="topImg.url" :alt="topImg.title"/></swiper-slide>
     </swiper>
     <div class="brand">
       <ul>
-        <li>
-          <router-link to="#"><img src="../assets/images/brands/1.png" alt="1"/></router-link>
-        </li>
-        <li>
-          <router-link to="#"><img src="../assets/images/brands/2.png" alt="2"/></router-link>
-        </li>
-        <li>
-          <router-link to="#"><img src="../assets/images/brands/3.png" alt="3"/></router-link>
-        </li>
-        <li>
-          <router-link to="#"><img src="../assets/images/brands/4.png" alt="4"/></router-link>
+        <li v-for="brand in brands" :key="brand.brandsID">
+          <router-link to="#"><img :src="brand.url" :alt="brand.title"/></router-link>
         </li>
       </ul>
     </div>
@@ -197,13 +334,9 @@ const leftMenu = ref({
           <h2 @mouseenter="leftMenu.menu1=true" @mouseleave="leftMenu.menu1=false">商品分類</h2>
           <Transition name="slide-fade">
             <ul class="menuLeft" v-show="leftMenu.menu1">
-              <li @mouseenter="leftMenu.menu1=true" @mouseleave="leftMenu.menu1=false">🐈PVC現貨</li>
-              <li @mouseenter="leftMenu.menu1=true" @mouseleave="leftMenu.menu1=false">🐈海外代購現貨</li>
-              <li @mouseenter="leftMenu.menu1=true" @mouseleave="leftMenu.menu1=false">🐈PVC預購</li>
-              <li @mouseenter="leftMenu.menu1=true" @mouseleave="leftMenu.menu1=false">🐈吉伊卡哇</li>
-              <li @mouseenter="leftMenu.menu1=true" @mouseleave="leftMenu.menu1=false">🐈貓車福箱</li>
-              <li @mouseenter="leftMenu.menu1=true" @mouseleave="leftMenu.menu1=false">🐈GK現貨</li>
-              <li @mouseenter="leftMenu.menu1=true" @mouseleave="leftMenu.menu1=false">🐈貓車周年慶</li>
+              <li v-for="(fm, index) in firstLeftMenu" :key="index" @mouseenter="leftMenu.menu1=true" @mouseleave="leftMenu.menu1=false">
+                <router-link :to="fm.routerPath">{{fm.name}}</router-link>
+              </li>
             </ul>
           </Transition>
         </li>
@@ -211,15 +344,9 @@ const leftMenu = ref({
           <h2 @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">商品標籤</h2>
           <Transition name="slide-fade">
             <ul class="menuLeft" v-show="leftMenu.menu2">
-              <li @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">Hololive</li>
-              <li @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">Nijisanji彩虹社</li>
-              <li @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">香香妹子</li>
-              <li @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">Lycoris 莉可麗絲</li>
-              <li @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">OVERLORD</li>
-              <li @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">火影忍者</li>
-              <li @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">初音未來miku</li>
-              <li @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">🐈福箱專區</li>
-              <li @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">米哈遊</li>
+              <li v-for="(sm, index) in secondLeftMenu" :key="index" @mouseenter="leftMenu.menu2=true" @mouseleave="leftMenu.menu2=false">
+                <router-link :to="sm.routerPath">{{sm.name}}</router-link>
+              </li>
             </ul>
           </Transition>
         </li>
@@ -233,77 +360,17 @@ const leftMenu = ref({
           :modules="modules"
           :autoplay="{ delay: 3000, disableOnInteraction: false }"
           >
-        <swiper-slide>
+          <swiper-slide v-for="goods in goodsImages" :key="goods.goodsImagesID">
           <div class="img">
-            <img src="../assets/images/goodsImg/miku.jpg" alt="miku"/>
+            <img :src="goods.url" :alt="goods.title"/>
           </div>
           <div class="commit">
-            <p>香香妹子</p>
-            <router-link to="/miku">
-              <p class="goodsName">【PVC預購】1/8 PVC人形 RISE UP+系列 初音未來 Fantasia Witch Ver.</p>
+            <p>{{ goods.classification }}</p>
+            <router-link :to="goods.routerPath">
+              <p class="goodsName">{{goods.goodsName}}</p>
             </router-link>
 
-            <p class="price">$1400</p>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="img">
-            <img src="../assets/images/goodsImg/hyperBody.webp" alt="hyperBody"/>
-          </div>
-          <div class="commit">
-            <p>香香妹子</p>
-            <router-link to="/hyperBody">
-              <p class="goodsName">【PVC現貨】Hyper Body 神罰</p>
-            </router-link>
-            <p class="price">$3090</p>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="img">
-            <img src="../assets/images/goodsImg/dusk.jpg" alt="dusk"/>
-          </div>
-          <div class="commit">
-            <p>香香妹子</p>
-            <router-link to="/dusk">
-              <p class="goodsName">【PVC預購】1/7 PVC人形 明日方舟 夕 Dusk</p>
-            </router-link>
-            <p class="price">$8650</p>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="img">
-            <img src="../assets/images/goodsImg/airu.jpg" alt="airu"/>
-          </div>
-          <div class="commit">
-            <p>香香妹子</p>
-            <router-link to="/airu">
-              <p class="goodsName">【PVC預購】1/7 天使警察 艾露‧弗拉提亞</p>
-            </router-link>
-            <p class="price">$5000</p>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="img">
-            <img src="../assets/images/goodsImg/noel.jpg" alt="noel"/>
-          </div>
-          <div class="commit">
-            <p>Hololive</p>
-            <router-link to="noel">
-              <p class="goodsName">【PVC現貨】1/7 hololive 白銀諾艾爾</p>
-            </router-link>
-            <p class="price">$5980</p>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="img">
-            <img src="../assets/images/goodsImg/rokixi.jpg" alt="rokixi"/>
-          </div>
-          <div class="commit">
-            <p>香香妹子</p>
-            <router-link to="rokixi">
-              <p class="goodsName">【PVC現貨】1/7洛琪希·米格路迪亞</p>
-            </router-link>
-            <p class="price">$4380</p>
+            <p class="price">{{goods.price}}</p>
           </div>
         </swiper-slide>
       </swiper>

@@ -1,17 +1,43 @@
 <script setup>
 import index from './components/main.vue'
 import {onMounted, provide, ref} from "vue";
-import {useRouter} from 'vue-router'
-
-const router = useRouter()
 
 const navMenu = ref({
   menu1: false, menu2: false, menu3: false, menu4: false
 })
 
-onMounted(() => {
-  router.push('/')
-})
+const first = ref([
+  {
+    name: "🐈貓車折扣",
+    routerPath: "#",
+  },
+  {
+    name: "🐈貓車新品",
+    routerPath: "#",
+  },
+  {
+    name: "🐈貓車特色",
+    routerPath: "#",
+  },
+])
+
+const second = ref([
+  {
+    name: "🐈最新到貨",
+    routerPath: "#",
+  },
+  {
+    name: "🐈人氣推薦",
+    routerPath: "#",
+  },
+])
+
+const third = ref([
+  {
+    name: "🐈福箱專區",
+    routerPath: "#",
+  },
+])
 
 </script>
 
@@ -140,9 +166,9 @@ nav {
         <router-link to="#" @mouseenter="navMenu.menu1=true" @mouseleave="navMenu.menu1=false">🐈貓車周年慶</router-link>
         <Transition name="slide-fade">
           <ul class="menu" v-show="navMenu.menu1">
-            <li @mouseenter="navMenu.menu1=true" @mouseleave="navMenu.menu1=false"><router-link to="#">🐈貓車折扣</router-link></li>
-            <li @mouseenter="navMenu.menu1=true" @mouseleave="navMenu.menu1=false"><router-link to="#">🐈貓車新品</router-link></li>
-            <li @mouseenter="navMenu.menu1=true" @mouseleave="navMenu.menu1=false"><router-link to="#">🐈貓車特色</router-link></li>
+            <li v-for="(f, index) in first" :key="index" @mouseenter="navMenu.menu1=true" @mouseleave="navMenu.menu1=false">
+              <router-link :to="f.routerPath">{{ f.name }}</router-link>
+            </li>
           </ul>
         </Transition>
       </li>
@@ -150,8 +176,9 @@ nav {
         <router-link to="#" @mouseenter="navMenu.menu2=true" @mouseleave="navMenu.menu2=false">🐈吉伊卡哇</router-link>
         <Transition name="slide-fade">
           <ul class="menu" v-show="navMenu.menu2">
-            <li @mouseenter="navMenu.menu2=true" @mouseleave="navMenu.menu2=false"><router-link to="#">🐈最新到貨</router-link></li>
-            <li @mouseenter="navMenu.menu2=true" @mouseleave="navMenu.menu2=false"><router-link to="#">🐈人氣推薦</router-link></li>
+            <li v-for="(s, index) in second" :key="index" @mouseenter="navMenu.menu2=true" @mouseleave="navMenu.menu2=false">
+              <router-link :to="s.routerPath">{{ s.name }}</router-link>
+            </li>
           </ul>
         </Transition>
       </li>
@@ -159,7 +186,9 @@ nav {
         <router-link to="#" @mouseenter="navMenu.menu3=true" @mouseleave="navMenu.menu3=false">🐈貓車福箱</router-link>
         <Transition name="slide-fade">
           <ul class="menu" v-show="navMenu.menu3">
-            <li @mouseenter="navMenu.menu3=true" @mouseleave="navMenu.menu3=false"><router-link to="#">🐈福箱專區</router-link></li>
+            <li v-for="(t, index) in third" :key="index" @mouseenter="navMenu.menu3=true" @mouseleave="navMenu.menu3=false">
+              <router-link :to="t.routerPath">{{ t.name }}</router-link>
+            </li>
           </ul>
         </Transition>
       </li>
