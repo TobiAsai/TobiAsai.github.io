@@ -87,21 +87,21 @@ const secondLeftMenu = ref([
 ])
 
 const topImages = ref([
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/topImg/1.jpeg?raw=true", title: "top1", topImagesID: topImagesID++},
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/topImg/2.jpg?raw=true", title: "top2", topImagesID: topImagesID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/topImg/1.jpeg", title: "top1", topImagesID: topImagesID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/topImg/2.jpg", title: "top2", topImagesID: topImagesID++},
 ])
 
 const brands = ref([
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/1.png?raw=true", title: "brand1", brandsID: brandsID++},
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/2.png?raw=true", title: "brand2", brandsID: brandsID++},
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/3.png?raw=true", title: "brand3", brandsID: brandsID++},
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/4.png?raw=true", title: "brand4", brandsID: brandsID++},
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/brands/5.png?raw=true", title: "brand5", brandsID: brandsID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/brands/1.png", title: "brand1", brandsID: brandsID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/brands/2.png", title: "brand2", brandsID: brandsID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/brands/3.png", title: "brand3", brandsID: brandsID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/brands/4.png", title: "brand4", brandsID: brandsID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/brands/5.png", title: "brand5", brandsID: brandsID++},
 ])
 
 const goodsImages = ref([
   {
-    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/airu.jpg?raw=true",
+    url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsImg/airu.jpg",
     title: "airu", 
     goodsImagesID: goodsImagesID++,
     classification: "香香妹子",
@@ -110,7 +110,7 @@ const goodsImages = ref([
     price: "$5000",
     },
   {
-    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/dusk.jpg?raw=true",
+    url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsImg/dusk.jpg",
     title: "dusk",
     goodsImagesID: goodsImagesID++,
     classification: "香香妹子",
@@ -119,7 +119,7 @@ const goodsImages = ref([
     price: "$8650",
   },
   {
-    url: "https://github.com/TobiAsai/imagesBed/raw/refs/heads/main/VueHomework/images/goodsImg/hyperBody.webp",
+    url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsImg/hyperBody.webp",
     title: "HyperBody",
     goodsImagesID: goodsImagesID++,
     classification: "香香妹子",
@@ -128,7 +128,7 @@ const goodsImages = ref([
     price: "$3090",
   },
   {
-    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/miku.jpg?raw=true",
+    url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsImg/miku.jpg",
     title: "miku",
     goodsImagesID: goodsImagesID++,
     classification: "香香妹子",
@@ -137,7 +137,7 @@ const goodsImages = ref([
     price: "$1400",
   },
   {
-    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/noel.jpg?raw=true",
+    url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsImg/noel.jpg",
     title: "noel",
     goodsImagesID: goodsImagesID++,
     classification: "Hololive",
@@ -146,7 +146,7 @@ const goodsImages = ref([
     price: "$5980",
   },
   {
-    url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsImg/rokixi.jpg?raw=true",
+    url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsImg/rokixi.jpg",
     title: "rokixi",
     goodsImagesID: goodsImagesID++,
     classification: "香香妹子",
