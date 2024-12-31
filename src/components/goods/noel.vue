@@ -12,10 +12,10 @@ let imgID = 0
 const id = ref(0)
 const iterm = ref(true)
 const images = ref([
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsDetailsImg/noel/1.jpg?raw=true", title: "1", imgID: imgID++},
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsDetailsImg/noel/2.jpg?raw=true", title: "2", imgID: imgID++},
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsDetailsImg/noel/3.jpg?raw=true", title: "3", imgID: imgID++},
-  {url: "https://github.com/TobiAsai/imagesBed/blob/main/VueHomework/images/goodsDetailsImg/noel/4.jpg?raw=true", title: "4", imgID: imgID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsDetailsImg/rokixi/1.webp", title: "1", imgID: imgID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsDetailsImg/rokixi/2.webp", title: "2", imgID: imgID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsDetailsImg/rokixi/3.webp", title: "3", imgID: imgID++},
+  {url: "https://cdn.jsdelivr.net/gh/TobiAsai/imagesBed/VueHomework/images/goodsDetailsImg/rokixi/4.webp", title: "4", imgID: imgID++},
 ])
 
 </script>
